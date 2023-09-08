@@ -24,8 +24,8 @@ public class AgendaEventos {
         LocalDate agora = LocalDate.now();
         Map<LocalDate, Evento> eventosOrdenados = new TreeMap<>(eventos);
 
-        for(Map.Entry<LocalDate, Evento> evento : eventosOrdenados.entrySet()){
-            if(evento.getKey().isEqual(agora) || evento.getKey().isAfter(agora)){
+        for (Map.Entry<LocalDate, Evento> evento : eventosOrdenados.entrySet()) {
+            if (evento.getKey().isEqual(agora) || evento.getKey().isAfter(agora)) {
                 System.out.println("O Próximo evento será: " + evento.getValue().getNomeEvento() + " será na data " + evento.getKey());
                 break;
             }

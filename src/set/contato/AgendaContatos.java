@@ -13,15 +13,15 @@ public class AgendaContatos {
         this.contatos = new HashSet<>();
     }
 
-    void adicionarContato(String nome, int numero){
+    void adicionarContato(String nome, int numero) {
         this.contatos.add(new Contato(nome, numero));
     }
 
-    void exibirContatos(){
+    void exibirContatos() {
         System.out.println(this.contatos);
     }
 
-    Set<Contato> pesquisarPorNome(String nome){
+    Set<Contato> pesquisarPorNome(String nome) {
         Set<Contato> contatosEncontrados = new HashSet<>();
         for (Contato contato : contatos) {
             if (contato.getNome().startsWith(nome)) {
@@ -31,10 +31,10 @@ public class AgendaContatos {
         return contatosEncontrados;
     }
 
-    Contato atualizarNumeroContato(String nome, int novoNumero){
+    Contato atualizarNumeroContato(String nome, int novoNumero) {
         Contato contatoAtualizado = null;
-        for(Contato contato : contatos){
-            if (contato.getNome().equalsIgnoreCase(nome)){
+        for (Contato contato : contatos) {
+            if (contato.getNome().equalsIgnoreCase(nome)) {
                 contato.setNumeroTelefone(novoNumero);
                 contatoAtualizado = contato;
                 break;

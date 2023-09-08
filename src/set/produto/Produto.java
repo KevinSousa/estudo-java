@@ -2,7 +2,7 @@ package set.produto;
 
 import java.util.Objects;
 
-public class Produto implements Comparable<Produto>{
+public class Produto implements Comparable<Produto> {
 
     private long cod;
     private String nome;
@@ -23,6 +23,7 @@ public class Produto implements Comparable<Produto>{
     public void setCod(long cod) {
         this.cod = cod;
     }
+
     public String getNome() {
         return nome;
     }
@@ -61,12 +62,7 @@ public class Produto implements Comparable<Produto>{
 
     @Override
     public String toString() {
-        return "Produto{" +
-                "cod=" + cod +
-                ", nome='" + nome + '\'' +
-                ", preco=" + preco +
-                ", quantidade=" + quantidade +
-                '}';
+        return "Produto{" + "cod=" + cod + ", nome='" + nome + '\'' + ", preco=" + preco + ", quantidade=" + quantidade + '}';
     }
 
     @Override

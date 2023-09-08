@@ -11,13 +11,13 @@ public class ConjuntoConvidado {
         this.listaConvidados = new HashSet<>();
     }
 
-    void adicionaConvidado(String nome, int codigoConvite){
+    void adicionaConvidado(String nome, int codigoConvite) {
         this.listaConvidados.add(new Convidado(nome, codigoConvite));
     }
 
-    void removerConvidado(int codigoConvite){
+    void removerConvidado(int codigoConvite) {
         Convidado convidadoASerRemovido = null;
-        for (Convidado convidado : listaConvidados){
+        for (Convidado convidado : listaConvidados) {
             if (convidado.getCodigoDoConvite() == codigoConvite) {
                 convidadoASerRemovido = convidado;
                 break;
@@ -26,11 +26,11 @@ public class ConjuntoConvidado {
         this.listaConvidados.remove(convidadoASerRemovido);
     }
 
-    int contarConvidados(){
+    int contarConvidados() {
         return this.listaConvidados.size();
     }
 
-    void exibirConvidados(){
+    void exibirConvidados() {
         System.out.println(this.listaConvidados);
     }
 }
