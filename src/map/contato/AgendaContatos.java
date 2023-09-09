@@ -16,9 +16,7 @@ public class AgendaContatos {
     }
 
     void removerContato(String nome) {
-        if (this.contatos.isEmpty()) {
-            return;
-        }
+        if (this.contatos.isEmpty()) throw new RuntimeException("A Lista de contatos está vazia");
         this.contatos.remove(nome);
     }
 
@@ -27,7 +25,7 @@ public class AgendaContatos {
     }
 
     Integer pesquisarPorNome(String nome) {
-        if (this.contatos.isEmpty()) return null;
+        if (this.contatos.isEmpty()) throw new RuntimeException("A Lista de contatos está vazia");
         return this.contatos.get(nome);
     }
 }

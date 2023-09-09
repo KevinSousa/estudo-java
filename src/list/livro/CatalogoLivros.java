@@ -16,7 +16,7 @@ public class CatalogoLivros {
     }
 
     List<Livro> pesquisaLivroPorAutor(String autor){
-        if(listaLivros.isEmpty()) return listaLivros;
+        if(listaLivros.isEmpty()) throw new RuntimeException("A Lista de livros está vazia");
         List<Livro> livrosEncontrados = new ArrayList<>();
         listaLivros.forEach(livro -> {
             if (livro.getAutor().equalsIgnoreCase(autor)) livrosEncontrados.add(livro);
@@ -25,7 +25,7 @@ public class CatalogoLivros {
     }
 
     List<Livro> pesquisarPorIntervaloAnos(int anoInicial, int anoFinal){
-        if(listaLivros.isEmpty()) return listaLivros;
+        if(listaLivros.isEmpty()) throw new RuntimeException("A Lista de livros está vazia");
         List<Livro> livrosEncontrados = new ArrayList<>();
         listaLivros.forEach(livro -> {
             if (livro.getAnoPublicacao() >= anoInicial && livro.getAnoPublicacao() <= anoFinal) livrosEncontrados.add(livro);
@@ -34,7 +34,7 @@ public class CatalogoLivros {
     }
 
     Livro pesquisarLivroPorTitulo(String titulo){
-        if(listaLivros.isEmpty()) return null;
+        if(listaLivros.isEmpty()) throw new RuntimeException("A Lista de livros está vazia");
         Livro livro = null;
         for(Livro l : listaLivros){
             if(l.getTitulo().equalsIgnoreCase(titulo)) {

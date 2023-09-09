@@ -10,6 +10,8 @@ public class Main {
         pessoas.adicionarPessoa(new Pessoa("Severino", 31, 1.65));
 
         System.out.println(pessoas.ordenarPorAltura());
+        System.out.println(pessoas.ordenarPorAlturaStream());
         System.out.println(pessoas.ordernarPorIdade());
+        System.out.println(pessoas.ordernarPorIdadeStream());
     }
 }

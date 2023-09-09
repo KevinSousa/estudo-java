@@ -22,7 +22,7 @@ public class EstoqueProdutos {
     double calcularValorTotalEstoque() {
         double valorEstoque = 0d;
 
-        if (produtos.isEmpty()) return valorEstoque;
+        if (produtos.isEmpty()) throw new RuntimeException("A lista de produtos está vazia");
 
         for (Produto produto : produtos.values()) {
             valorEstoque += produto.getQuantidade() * produto.getPreco();
@@ -31,11 +31,19 @@ public class EstoqueProdutos {
         return valorEstoque;
     }
 
+    double calcularValorTotalEstoqueStream() {
+        if (produtos.isEmpty()) throw new RuntimeException("A lista de produtos está vazia");
+        return produtos
+                .values()
+                .stream()
+                .mapToDouble(item -> item.getPreco() * item.getQuantidade()).sum();
+    }
+
     Produto obterProdutoMaisCaro() {
         Produto produtoMaisCaro = null;
         double maiorValor = Double.MIN_VALUE;
 
-        if (produtos.isEmpty()) return null;
+        if (produtos.isEmpty()) throw new RuntimeException("A Lista de produtos está vazia");
 
         for (Produto produto : produtos.values()) {
             if (produto.getPreco() > maiorValor) {
@@ -49,7 +57,7 @@ public class EstoqueProdutos {
         Produto produtoMaisBarato = null;
         double menorValor = Double.MAX_VALUE;
 
-        if (produtos.isEmpty()) return null;
+        if (produtos.isEmpty()) throw new RuntimeException("A Lista de produtos está vazia");
 
         for (Produto produto : produtos.values()) {
             if (produto.getPreco() < menorValor) {

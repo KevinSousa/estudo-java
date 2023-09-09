@@ -17,5 +17,6 @@ public class Main {
         System.out.println(estoqueProdutos.obterProdutoMaisCaro());
 
         System.out.println(estoqueProdutos.calcularValorTotalEstoque());
+        System.out.println(estoqueProdutos.calcularValorTotalEstoqueStream());
     }
 }
